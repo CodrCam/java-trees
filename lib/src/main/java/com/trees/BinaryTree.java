@@ -49,5 +49,20 @@ public class BinaryTree {
         postOrder(node.right, result);
         result.add(node.value);
     }
-}
 
+    // lab16 new methods
+    public int findMaxValue() {
+        return findMaxValueRecursive(root);
+    }
+
+    private int findMaxValueRecursive(Node node) {
+        if (node == null) {
+            return Integer.MIN_VALUE;
+        }
+
+        int maxLeft = findMaxValueRecursive(node.left);
+        int maxRight = findMaxValueRecursive(node.right);
+
+        return Math.max(node.value, Math.max(maxLeft, maxRight));
+    }
+}
