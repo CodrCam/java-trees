@@ -109,4 +109,20 @@ public class BinaryTreeTests {
         assertFalse(tree.contains(6));
         assertFalse(tree.contains(11));
     }
+
+    // Test for max in a binary tree
+    @Test
+    public void testFindMaxValue() {
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.add(25);
+        tree.add(20);
+        tree.add(30);
+        tree.add(22);
+        tree.add(28);
+        tree.add(26);
+        tree.add(27);
+
+        int maxValue = tree.findMaxValue();
+        assertEquals(30, maxValue);
+    }
 }
