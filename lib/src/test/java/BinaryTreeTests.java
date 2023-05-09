@@ -1,3 +1,4 @@
+import com.trees.BreadthFirstTraversal;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -124,5 +125,21 @@ public class BinaryTreeTests {
 
         int maxValue = tree.findMaxValue();
         assertEquals(30, maxValue);
+    }
+
+    @Test
+    public void testBreadthFirstTraversal() {
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.add(10);
+        tree.add(5);
+        tree.add(15);
+        tree.add(3);
+        tree.add(7);
+        tree.add(12);
+        tree.add(17);
+
+        List<Integer> result = BreadthFirstTraversal.breadthFirst(tree);
+
+        assertEquals(List.of(10, 5, 15, 3, 7, 12, 17), result);
     }
 }
